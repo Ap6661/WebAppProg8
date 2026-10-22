@@ -14,6 +14,45 @@ const server =
       res.write('Content \n')
       res.write('More content \n')
       res.write('Hello World')    
+      res.write(`
+    <table>
+      <thead>
+        <tr>
+          <th>Cities</th>
+          <th>Reasons</th>
+          <th>Distance To Favorite City</th>
+          <th>Cost To Travel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tokyo</td>
+          <td>I really enjoy Japan's culture and architecture</td>
+          <td>12 hr 50 min</td>
+          <td>$1,096+</td>
+        </tr>
+        <tr>
+          <td>Paris</td>
+          <td>I think it would be fun for sightseeing</td>
+          <td>10 hr 55 min</td>
+          <td>$1,581+</td>
+        </tr>
+        <tr>
+          <td>New York</td>
+          <td>Very popular city that feels like a bucket list item</td>
+          <td>5 hr 20 min</td>
+          <td>$367+</td>
+        </tr>
+        <tr>
+          <td>Los Angeles</td>
+          <td>Also another popular city that feels like a bucket list item. Going
+            to a music event there could be fun.</td>
+          <td>1 hr</td>
+          <td>$222+</td>
+        </tr>
+      </tbody>
+    </table>
+        `)
       res.end('</body></html>')
       //Close the response
     }                           
