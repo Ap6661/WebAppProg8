@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Bosch uses a fetch request 
+    </title>
+  </head>
+
+  <script>
+    function compute() {
+      let x = document.getElementById('x').value;
+      let y = document.getElementById('y').value;
+
+      console.log(x)
+      console.log(y)
+
+      fetch(`http://localhost:3001/?x=${x}&y=${y}`).then (
+           (resp) => { return resp.text() } 
+        ).then (
+           (text) => { 
+              document.getElementById("result").innerHTML = text;
+       }).catch( (error) =>{
+              document.getElementById("result").innerHTML = `Error: ${error.message}`;
+          }
+    );
+
+    }
+  </script>
+
+  <body>
+    <h1>Bosch uses a fetch request</h1>
+
+    <label>X </label><br/>
+    <input id='x' type="number"/><br/>
+    <br/>
+    <label>Y </label><br/>
+    <input id='y' type="number"/>
+    <br/>
+    <br/>
+    <button onclick='compute()'>Invoke computation on Server</button>
+
+    <div id="result">
+    </div>
+
+  </body>
+</html>
